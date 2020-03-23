@@ -12,13 +12,18 @@ import * as xml2js from 'xml2js';
 export class FeedComponent implements OnInit {
 
   RssData: NewsRss;
-  filtro = ['saude', 'corona', 'ibuprofeno', 'covid19', 'covid-19', 'pandemia'];
+  filtro = ['saude', 'corona', 'ibuprofeno', 'covid19', 'covid-19', 'pandemia', 'Corona Vírus', 'Covid-19', 'Vírus', 'Corona',  'quarentena', 'Coronavírus', 'coronavírus'];
+  news: string[] = [];
 
   constructor(private globals: Globals, private http: HttpClient) { }
 
   async ngOnInit() {
-    await this.getFeed('https://noticiasdeararas.com.br/feed');
-    await this.getFeed('https://reporterbetoribeiro.com.br/feed/');
+    this.news.push('https://www.noticiasdeararas.com.br/feed/','https://www.jornalcidade.net/rss','https://conchalemnoticias.com.br/rss', 'https://opopularmm.com.br/rss', 'https://reporterbetoribeiro.com.br/rss')
+    this.news.map(async url => {
+      await this.getFeed(url);
+     });
+    // await this.getFeed('https://noticiasdeararas.com.br/feed');
+    // await this.getFeed('https://reporterbetoribeiro.com.br/feed/');
   }
 
   async getFeed(url: string) {
@@ -37,16 +42,24 @@ export class FeedComponent implements OnInit {
           this.RssData.rss.channel[0].item.forEach(el => {
             const title = this.removeAcento(el.title[0]);
             const description = this.removeAcento(el.description[0]);
+            const source = el.guid;
 
-            for (let i = 0; i < this.filtro.length; i++) {
-              if (title.includes(this.filtro[i]) || description.includes(this.filtro[i])) {
+            this.filtro.map(filtro => {
+              if (title.includes(filtro) && description.includes(filtro)){
                 el.description[0] = el.description[0].replace(/<\/?[^>]+(>|$)/g, '');
                 this.globals.itens['push'](el);
-                break;
               }
-            }
+            })
+            // for (let i = 0; i < this.filtro.length; i++) {
+            //   if (title.includes(this.filtro[i]) || description.includes(this.filtro[i])) {
+            //     console.log(el)
+            //     el.description[0] = el.description[0].replace(/<\/?[^>]+(>|$)/g, '');
+            //     this.globals.itens['push'](el);
+            //     break;
+            //   }
+            // }
           });
-          console.log(this.globals.itens);
+          // console.log(this.globals.itens);
         });
 
       });
