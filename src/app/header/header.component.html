@@ -87,7 +87,64 @@
 				</form>
 			</div>
     </div>
-	</div> -->
+  </div> -->
+  
+  <header class="header header-responsive" id="site-header-responsive">
+      <div class="header-content-wrapper">
+        <ul class="nav nav-tabs mobile-app-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link" href="#principal" role="tab" data-toggle="tab" aria-selected="true" (click)="toggleCollapsed()">
+              <div class="control-icon has-items">
+                <span class="material-icons" style="color:white" >
+                  menu
+                  </span>
+              </div>
+            <!-- <div class="ripple-container"></div> -->
+            </a>
+          </li>
+        </ul>
+      </div>
+    
+  <!-- Tab panes -->
+  <div class="tab-content tab-content-responsive">
+    <div class="tab-pane" id="principal" role="tabpanel" [ngClass]="{'active': collapsed}">
+      <div class="mCustomScrollbar ps ps--theme_default ps--active-y">
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title">Navegação</h6>
+        </div>
+        <ul class="account-settings">
+          <li>
+            <a routerLink="noticias" class="link-find-friend span_menu" (click)="toggleCollapsed()">ÚLTIMAS NOTÍCIAS</a>
+          </li>
+          <li>
+            <a routerLink="links" class="link-find-friend span_menu" (click)="toggleCollapsed()">LINKS ÚTEIS</a>
+          </li>
+          <li>
+            <a routerLink="colaboradores" class="link-find-friend span_menu" (click)="toggleCollapsed()">COLABORADORES</a>
+          </li>
+        </ul>
+
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title">Siga os casos em TEMPO REAL</h6>
+        </div>
+        <ul class="account-settings">
+          <li>
+            <a href="https://noticiasdeararas.com.br" target="_blank">
+              <span>Painel em ARARAS</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://bing.com/covid" target="_blank">
+              <span>Painel no MUNDO</span>
+            </a>
+          </li>
+        </ul>
+    </div>
+    </div>
+  </div>
+  <!-- ... end  Tab panes -->
+
+    </header>
 
 </header>
 
