@@ -21,7 +21,7 @@ export class FeedComponent implements OnInit {
     this.news.push('https://www.noticiasdeararas.com.br/feed/','https://www.jornalcidade.net/rss','https://conchalemnoticias.com.br/rss', 'https://opopularmm.com.br/rss', 'https://reporterbetoribeiro.com.br/rss')
     this.news.map(async url => {
       await this.getFeed(url);
-     });
+     });    
   }
 
   async getFeed(url: string) {
@@ -37,7 +37,7 @@ export class FeedComponent implements OnInit {
         const parseString = xml2js.parseString;
         parseString(data, (err, result: NewsRss) => {
           this.RssData = result;
-          this.RssData.rss.channel[0].item.map(el => {
+          this.RssData.rss.channel[0].item.forEach(el => {
             const title = this.removeAcento(el.title[0]);
             const description = this.removeAcento(el.description[0]);
             
@@ -51,7 +51,7 @@ export class FeedComponent implements OnInit {
           });
         });
 
-      });
+      }); 
   }
 
   removeAcento (text: string) {
@@ -64,5 +64,4 @@ export class FeedComponent implements OnInit {
     text = text.replace(new RegExp('[Ç]', 'gi'), 'c');
     return text;
   }
-
 }
