@@ -9,13 +9,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { FeedComponent } from './feed/feed.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { HeaderComponent } from './header/header.component';
+import { ContactComponent } from './contact/contact.component';
+import { ContributorsComponent } from './contributors/contributors.component';
+import { LinksComponent } from './links/links.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
   declarations: [
     AppComponent,
-    FeedComponent
+    FeedComponent,
+    HeaderComponent,
+    ContactComponent,
+    ContributorsComponent,
+    LinksComponent
   ],
   imports: [
     BrowserModule,

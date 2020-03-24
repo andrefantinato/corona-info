@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-3 col-lg-3 col-md-12">
+      <div class="ui-block">
+        <div class="ui-block-title">
+          <h6 class="title">TELEFONES</h6>
+        </div>
+        <div class="ui-block-content">
+          <ul class="widget w-personal-info">
+            <li *ngFor="let tel of telefones">
+              <span class="title">{{tel.title}}:</span>
+              <span class="text">
+                {{tel.phone}}
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-xl-9 col-lg-9 col-md-12">
+      <div class="ui-block">
+        <div class="ui-block-title" style="display:grid">
+          <h5 class="title">LINKS ÚTEIS!</h5>
+          <p style="margin-top:5px">Acesse Links úteis, telefones, Decretos, entre outras informações úteis.</p>
+        </div>
+        <div class="ui-block-content">
+          <ul class="widget w-personal-info item-block">
+            <li *ngFor="let l of links">
+              <span class="title">{{l.title}}</span>
+              <span class="text">
+                <a href="{{l.link}}" target="_blank">
+                  ACESSE AQUI
+                </a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

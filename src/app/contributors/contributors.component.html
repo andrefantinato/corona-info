@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row" style="background-color: #fff;margin:0px;">
+
+    <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-6" *ngFor="let colab of colaboradores">
+      <div class="ui-block" style="border:none">
+          <div class="friend-item friend-groups">
+            <div class="friend-item-content">
+              <div class="friend-avatar">
+                <a href="#" target="_blank">
+                  <div class="author-thumb">
+                    <img src="assets/img/{{colab.avatar}}" alt="{{colab.nome}}" width="120">
+                  </div>
+                </a>
+                <div class="author-content">
+                  <a href="#" class="h5 author-name">{{colab.nome}}</a>
+                </div>
+              </div>  
+            </div>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</div>
