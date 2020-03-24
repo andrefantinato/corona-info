@@ -1,0 +1,12 @@
+.control-block-casos {
+    padding: 25px 20px;
+}
+@media (max-width: 560px) {
+    .span_menu { font-size:11px}
+    .link-find-friend {
+        padding:22px 18px;
+    }
+    .control-block-casos {
+        padding: 22px 18px;
+    }
+}
