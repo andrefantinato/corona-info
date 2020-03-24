@@ -22,6 +22,7 @@ export class FeedComponent implements OnInit {
     this.news.map(async url => {
       await this.getFeed(url);
      });    
+   console.log(this.globals.itens);
   }
 
   async getFeed(url: string) {
@@ -32,7 +33,7 @@ export class FeedComponent implements OnInit {
       responseType: 'text'
     };
     this.http
-      .get<any>('https://cors-anywhere.herokuapp.com/' + url, requestOptions)
+      .get<any>('https://still-brushlands-53743.herokuapp.com/' + url, requestOptions)
       .subscribe(data => {
         const parseString = xml2js.parseString;
         parseString(data, (err, result: NewsRss) => {
@@ -40,7 +41,6 @@ export class FeedComponent implements OnInit {
           this.RssData.rss.channel[0].item.forEach(el => {
             const title = this.removeAcento(el.title[0]);
             const description = this.removeAcento(el.description[0]);
-            
             for (let i = 0; i < this.filtro.length; i++) {
               if (title.includes(this.filtro[i]) || description.includes(this.filtro[i])) {
                 el.description[0] = el.description[0].replace(/<\/?[^>]+(>|$)/g, '');
@@ -50,8 +50,7 @@ export class FeedComponent implements OnInit {
             }
           });
         });
-
-      }); 
+      });
   }
 
   removeAcento (text: string) {
