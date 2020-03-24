@@ -14,6 +14,7 @@ export class FeedComponent implements OnInit {
   RssData: NewsRss;
   filtro: string[] = ['saude', 'corona', 'covid19', 'covid-19', 'pandemia', 'Corona Vírus', 'Covid-19', 'Vírus', 'Corona',  'quarentena', 'Coronavírus', 'coronavírus'];
   news: string[] = [];
+  sortedItens: any;
 
   constructor(private globals: Globals, private http: HttpClient) { }
 
@@ -21,8 +22,10 @@ export class FeedComponent implements OnInit {
     this.news.push('https://www.noticiasdeararas.com.br/feed/','https://www.jornalcidade.net/rss','https://conchalemnoticias.com.br/rss', 'https://opopularmm.com.br/rss', 'https://reporterbetoribeiro.com.br/rss')
     this.news.map(async url => {
       await this.getFeed(url);
-     });    
-   console.log(this.globals.itens);
+     });
+
+    //  const sortedItens = this.globals.itens.sort((a, b) => b.pubDate[0] - a.pubDate[0]);
+    // console.log(sortedItens);
   }
 
   async getFeed(url: string) {
@@ -50,6 +53,11 @@ export class FeedComponent implements OnInit {
             }
           });
         });
+
+        const s = this.globals.itens.sort(function(a,b){
+          return (a.pubDate[0] < b.pubDate[0]) ? 1 : -1;
+        });
+
       });
   }
 
