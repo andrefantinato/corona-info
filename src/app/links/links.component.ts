@@ -9,16 +9,16 @@ export class LinksComponent implements OnInit {
 
   links = [
     {
+      title: "O QUE É CORONAVÍRUS? (COVID-19)",
+      link: "https://coronavirus.saude.gov.br/"
+    },
+    {
       title: "DECRETO - SITUAÇÃO DE EMERGÊNCIA EM ARARAS",
       link: "https://www.araras.sp.gov.br/im/files/arquivos_2020/Secom2020/Decreto DE6660_2020.pdf"
     },
     {
       title: "DECRETO - FECHAMENTO DO COMÉRCIO EM ARARAS",
       link: "https://www.araras.sp.gov.br/im/files/arquivos_2020/Secom2020/decreto 6661_2020.pdf"
-    },
-    {
-      title: "O QUE É CORONAVÍRUS? (COVID-19)",
-      link: "https://coronavirus.saude.gov.br/"
     }
   ];
 
