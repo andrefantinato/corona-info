@@ -12,22 +12,22 @@ export class ContributorsComponent implements OnInit {
     {
       nome: "André Fantinato",
       avatar: "andre.jpg",
-      url: ""
+      url: "https://www.linkedin.com/in/andre-fantinato/"
     },
     {
       nome: "Jhonatan Rampim",
       avatar: "jhonatan.jpg",
-      url: ""
+      url: "https://www.linkedin.com/in/jhonatan-rampim/"
     },
     {
       nome: "Kirk Daves",
       avatar: "kirk.jpg",
-      url: ""
+      url: "https://www.linkedin.com/in/kirk-daves/"
     },
     {
       nome: "Willian Calefi",
       avatar: "willian.jpg",
-      url: ""
+      url: "https://www.linkedin.com/in/willian-calefi-4134091a4/"
     }
   ];
   colabs = [];
