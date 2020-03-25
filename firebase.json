@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/corona-rss",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
