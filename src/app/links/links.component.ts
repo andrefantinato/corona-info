@@ -19,6 +19,10 @@ export class LinksComponent implements OnInit {
     {
       title: "DECRETO - FECHAMENTO DO COMÉRCIO EM ARARAS",
       link: "https://www.araras.sp.gov.br/im/files/arquivos_2020/Secom2020/decreto 6661_2020.pdf"
+    },
+    {
+      title: "ÚLTIMAS NOTÍCIAS - PREFEITURA DE ARARAS",
+      link: "https://www.araras.sp.gov.br/coronavirus"
     }
   ];
 

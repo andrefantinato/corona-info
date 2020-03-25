@@ -129,12 +129,12 @@
         </div>
         <ul class="account-settings">
           <li>
-            <a routerLink="painel">
+            <a routerLink="painel" (click)="toggleCollapsed()">
               <span>Casos em ARARAS</span>
             </a>
           </li>
           <li>
-            <a href="https://bing.com/covid" target="_blank">
+            <a href="https://bing.com/covid" target="_blank" (click)="toggleCollapsed()">
               <span>Casos no MUNDO</span>
             </a>
           </li>
