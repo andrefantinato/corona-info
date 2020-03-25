@@ -38,7 +38,7 @@ export class FeedComponent implements OnInit {
       responseType: 'text'
     };
     this.http
-      .get<any>('https://still-brushlands-53743.herokuapp.com/' + url, requestOptions)
+      .get<any>(url, requestOptions)
       .subscribe(data => {
         const parseString = xml2js.parseString;
         parseString(data, (err, result: NewsRss) => {
