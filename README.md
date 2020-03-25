@@ -3,7 +3,7 @@
   
   - Painel em tempo real de Araras e do Mundo
   - Últimas notícias
-  - Links e telefones últeis
+  - Links e telefones úteis
 
 # Demo
 https://ararascoronavirus.herokuapp.com
