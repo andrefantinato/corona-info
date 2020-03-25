@@ -1,3 +1,4 @@
+import { PainelComponent } from './painel/painel.component';
 import { LinksComponent } from './links/links.component';
 import { ContributorsComponent } from './contributors/contributors.component';
 import { ContactComponent } from './contact/contact.component';
@@ -12,6 +13,7 @@ const appRoutes: Routes = [
   { path: 'contato', component: ContactComponent, pathMatch: 'full' },
   { path: 'links', component: LinksComponent, pathMatch: 'full' },
   { path: 'colaboradores', component: ContributorsComponent, pathMatch: 'full' },
+  { path: 'painel', component: PainelComponent, pathMatch: 'full' },
   { path: '**', redirectTo: '' }
 ];
 

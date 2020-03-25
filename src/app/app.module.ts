@@ -13,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContributorsComponent } from './contributors/contributors.component';
 import { LinksComponent } from './links/links.component';
+import { PainelComponent } from './painel/painel.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -23,7 +24,8 @@ registerLocaleData(localePt, 'pt-BR');
     HeaderComponent,
     ContactComponent,
     ContributorsComponent,
-    LinksComponent
+    LinksComponent,
+    PainelComponent
   ],
   imports: [
     BrowserModule,
