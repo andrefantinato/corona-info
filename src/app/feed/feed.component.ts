@@ -21,7 +21,7 @@ export class FeedComponent implements OnInit {
   async ngOnInit() {
     this.globals.itens = [];
     this.news.push('https://www.noticiasdeararas.com.br/feed/','http://j1diario.com.br/feed/','https://conchalemnoticias.com.br/rss', 'http://noticiadelimeira.com.br/feed/', 'https://reporterbetoribeiro.com.br/rss')
-    this.news.map(async url => {
+    this.news.forEach(async url => {
       await this.getFeed(url);
      });
 
@@ -56,8 +56,10 @@ export class FeedComponent implements OnInit {
           });
         });
 
-        const s = this.globals.itens.sort(function(a,b){
-          return (a.pubDate[0] < b.pubDate[0]) ? 1 : -1;
+        this.globals.itens.sort(function(a,b){
+          a = new Date (a.pubDate[0])
+          b = new Date (b.pubDate[0])
+          return (a < b) ? 1 : -1;
         });
 
       });
