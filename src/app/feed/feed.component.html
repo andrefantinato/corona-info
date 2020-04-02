@@ -19,7 +19,7 @@
                 </a>
                 <div class="post__date">
                   <time class="published" datetime="">
-                    {{news.pubDate | date: 'EEEE, dd \'de\' MMMM \'às\' HH:mm' }} <br>
+                    {{news.pubDate | date: 'EEEE, dd \'de\' MMMM \'às\' HH:mm' }} 
                   </time>
                 </div>
               </div>
@@ -29,8 +29,12 @@
             <p>
               {{ (news.description[0].length > 300)?(news.description[0] | slice:0:300)+'...':(news.description[0]) }}
             </p>
-
+            <div class="source">
+              {{news.source}}
+            </div>
           </article>
+          
+          
         </div>
 
       </div>
